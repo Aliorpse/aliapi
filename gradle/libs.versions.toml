@@ -1,0 +1,22 @@
+[versions]
+kotlin = "2.3.0"
+ktor = "3.3.3"
+logback = "1.5.24"
+reThis = "0.3.9"
+serde = "1.10.0-RC"
+mcutils = "3.6.7"
+
+[libraries]
+mcutils-serverStatus = { module = "tech.aliorpse.mcutils:mcutils-server-status", version.ref = "mcutils" }
+reThis = { module = "eu.vendeli:rethis", version.ref = "reThis" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serde" }
+ktor-contentNegotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-serverCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-serverNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+[plugins]
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
