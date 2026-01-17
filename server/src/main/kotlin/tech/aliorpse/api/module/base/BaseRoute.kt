@@ -6,6 +6,6 @@ import tech.aliorpse.api.shared.model.success
 
 fun Route.baseRoute() {
     get("/") {
-        call.success(message = "Ciallo ~")
+        call.success(data = "Ciallo ~ Please refer to https://github.com/Aliorpse/aliapi")
     }
 }

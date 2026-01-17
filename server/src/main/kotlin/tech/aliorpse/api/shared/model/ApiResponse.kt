@@ -12,10 +12,7 @@ data class ApiResponse<T>(
 )
 
 suspend inline fun <reified T> ApplicationCall.success(data: T) =
-    respond(ApiResponse(0, null, data))
-
-suspend inline fun ApplicationCall.success(message: String) =
-    respond(ApiResponse(0, message, null))
+    respond(ApiResponse(0, "success", data))
 
 suspend fun ApplicationCall.error(code: Short = 1, message: String) =
     respond(ApiResponse(code, message, null))
