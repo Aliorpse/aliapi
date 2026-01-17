@@ -17,10 +17,16 @@ application {
 dependencies {
     implementation(libs.reThis)
     implementation(libs.logback)
+    implementation(libs.ksoup)
     implementation(libs.mcutils.serverStatus)
+
     implementation(libs.kotlinx.serialization)
+    implementation(libs.ktor.serialization.json)
     implementation(libs.ktor.serverCore)
     implementation(libs.ktor.serverNetty)
-    implementation(libs.ktor.contentNegotiation)
-    implementation(libs.ktor.serialization.json)
+    implementation(libs.ktor.server.contentNegotiation)
+
+    implementation(libs.ktor.clientCore)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.contentNegotiation)
 }

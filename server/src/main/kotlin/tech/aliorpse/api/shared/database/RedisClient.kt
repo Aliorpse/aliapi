@@ -10,7 +10,7 @@ object RedisClient {
 
     fun init(host: String, port: Int, password: String) {
         redisClient = ReThis.standalone(Address(host, port)) {
-            auth(password.toCharArray())
+            if (password != "none") { auth(password.toCharArray()) }
         }
     }
 
