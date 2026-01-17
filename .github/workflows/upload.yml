@@ -29,7 +29,7 @@ jobs:
         run: ./gradlew shadowJar
 
       - name: rename jar
-        run: mv build/libs/*-all.jar build/libs/aliapi.jar
+        run: mv server/build/libs/server-all.jar build/dist/aliapi.jar
 
       - name: upload JAR
         uses: appleboy/scp-action@v0.1.7
@@ -37,7 +37,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          source: build/libs/aliapi.jar
+          source: build/dist/aliapi.jar
           target: ${{ env.REMOTE_PATH }}
           strip_components: 2
 
