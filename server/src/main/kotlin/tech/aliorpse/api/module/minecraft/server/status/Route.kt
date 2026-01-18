@@ -27,7 +27,9 @@ fun Route.minecraftServerStatusRoute() {
 
         val response = runCatching {
             val status = MCServer.getStatus(host, statusPort, timeout = 5000)
-            val query = queryPort?.let { MCServer.getQueryFull(status.srvRecord ?: host, it, timeout = 5000) }
+            val query = queryPort?.let {
+                MCServer.getQueryFull(hostPortOf(status.srvRecord).host ?: host, it, timeout = 5000)
+            }
 
             ServerStatusResponse(
                 DescriptionWithHtml(status.description, status.description.toHtml()),
