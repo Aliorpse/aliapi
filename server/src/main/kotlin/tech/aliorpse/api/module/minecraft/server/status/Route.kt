@@ -12,7 +12,7 @@ private const val DEFAULT_PORT = 25565
 
 fun Route.minecraftServerStatusRoute() {
     get("/minecraft/server/status") {
-        val address = call.parameters["address"] ?: return@get call.error(message = "Missing parameter: target")
+        val address = call.parameters["address"] ?: return@get call.error(message = "Missing parameter: address")
         val (host, port) = hostPortOf(address)
 
         call.success(
