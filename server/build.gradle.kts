@@ -7,6 +7,11 @@ plugins {
 
 group = "tech.aliorpse.api"
 
+repositories {
+    mavenCentral()
+    maven("https://mvn.vendeli.eu/re.this")
+}
+
 application {
     mainClass.set("tech.aliorpse.api.ApplicationKt")
 
@@ -15,7 +20,8 @@ application {
 }
 
 dependencies {
-    implementation(libs.reThis)
+    // implementation(libs.reThis)
+    implementation("eu.vendeli:rethis:dev-260119~1d084f0")
     implementation(libs.logback)
     implementation(libs.ksoup)
     implementation(libs.mcutils.serverStatus)
