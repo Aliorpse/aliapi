@@ -15,7 +15,8 @@ application {
 }
 
 dependencies {
-    implementation(libs.reThis)
+    // implementation(libs.reThis)
+    implementation("eu.vendeli:rethis:dev-260119~1d084f0")
     implementation(libs.logback)
     implementation(libs.ksoup)
     implementation(libs.mcutils.serverStatus)

@@ -25,6 +25,7 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+        maven("https://mvn.vendeli.eu/re.this")
     }
 }
 
