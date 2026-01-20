@@ -7,11 +7,6 @@ plugins {
 
 group = "tech.aliorpse.api"
 
-repositories {
-    mavenCentral()
-    maven("https://mvn.vendeli.eu/re.this")
-}
-
 application {
     mainClass.set("tech.aliorpse.api.ApplicationKt")
 
