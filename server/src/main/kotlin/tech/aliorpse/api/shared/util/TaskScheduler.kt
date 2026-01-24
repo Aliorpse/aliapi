@@ -1,7 +1,9 @@
 package tech.aliorpse.api.shared.util
 
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -15,8 +17,8 @@ object TaskScheduler {
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
-    fun launch(hour: Int = 0, minute: Int = 0, name: String, block: suspend () -> Unit) {
-        scope.launch {
+    fun new(hour: Int = 0, minute: Int = 0, name: String, block: suspend () -> Unit): Job {
+        return scope.launch(start = CoroutineStart.LAZY) {
             while (isActive) {
                 val now = System.currentTimeMillis()
                 val target = calculateNextRunTime(now, hour, minute)

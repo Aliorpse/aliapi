@@ -1,11 +1,12 @@
 [versions]
 kotlin = "2.3.0"
 ktor = "3.3.3"
-logback = "1.5.24"
+logback = "1.5.25"
 reThis = "0.3.9"
 serde = "1.10.0-RC"
 mcutils = "3.6.7"
 ksoup = "0.2.5"
+koin = "4.1.1"
 
 [libraries]
 mcutils-serverStatus = { module = "tech.aliorpse.mcutils:mcutils-server-status", version.ref = "mcutils" }
@@ -13,16 +14,26 @@ reThis = { module = "eu.vendeli:rethis", version.ref = "reThis" }
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 ksoup = { module = "com.fleeksoft.ksoup:ksoup", version.ref = "ksoup" }
 
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin" }
+koin-ktor = { module = "io.insert-koin:koin-ktor" }
+koin-logger = { module = "io.insert-koin:koin-logger-slf4j" }
+
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serde" }
 ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
-ktor-server-contentNegotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
 ktor-serverCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-serverNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-server-contentNegotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-server-callLogging = { module = "io.ktor:ktor-server-call-logging", version.ref = "ktor" }
+ktor-server-statusPages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor" }
+ktor-server-compression = { module = "io.ktor:ktor-server-compression", version.ref = "ktor" }
+ktor-server-rateLimit = { module = "io.ktor:ktor-server-rate-limit", version.ref = "ktor" }
+ktor-server-resources = { module = "io.ktor:ktor-server-resources", version.ref = "ktor" }
+ktor-server-requestValidation = { module = "io.ktor:ktor-server-request-validation", version.ref = "ktor" }
 
 ktor-clientCore = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
-ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 
 [plugins]
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

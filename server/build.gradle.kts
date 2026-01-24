@@ -21,11 +21,21 @@ dependencies {
     implementation(libs.ksoup)
     implementation(libs.mcutils.serverStatus)
 
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.ktor)
+    implementation(libs.koin.logger)
+
     implementation(libs.kotlinx.serialization)
     implementation(libs.ktor.serialization.json)
     implementation(libs.ktor.serverCore)
     implementation(libs.ktor.serverNetty)
     implementation(libs.ktor.server.contentNegotiation)
+    implementation(libs.ktor.server.callLogging)
+    implementation(libs.ktor.server.statusPages)
+    implementation(libs.ktor.server.rateLimit)
+    implementation(libs.ktor.server.compression)
+    implementation(libs.ktor.server.resources)
+    implementation(libs.ktor.server.requestValidation)
 
     implementation(libs.ktor.clientCore)
     implementation(libs.ktor.client.cio)
