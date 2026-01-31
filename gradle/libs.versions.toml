@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.3.0"
-ktor = "3.3.3"
+ktor = "3.4.0"
 logback = "1.5.25"
 reThis = "0.3.9"
 serde = "1.10.0"
